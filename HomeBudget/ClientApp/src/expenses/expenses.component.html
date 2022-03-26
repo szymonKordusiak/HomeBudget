@@ -1,0 +1,90 @@
+<div class="income-left">
+  <div class="headline-intro">Wydatki</div>
+
+
+<p>1. Wybierz czy chcesz analizować poprzedni miesiąc czy planować miesiąc przyszły: </p>
+
+<mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+  <mat-button-toggle value="bold">Analiza</mat-button-toggle>
+  <mat-button-toggle value="italic">Planowanie</mat-button-toggle>
+</mat-button-toggle-group>
+
+
+<p>2. Wybierz analizowany miesiąc:</p>
+
+<mat-form-field appearance="fill">
+  <mat-label>Wybierz miesiąc</mat-label>
+  <mat-select>
+    <mat-option value="january">Styczeń</mat-option>
+    <mat-option value="february">Luty</mat-option>
+    <mat-option value="march">Marzec</mat-option>
+    <mat-option value="april">Kwiecień</mat-option>
+    <mat-option value="may">Maj</mat-option>
+    <mat-option value="june">Czerwiec</mat-option>
+    <mat-option value="july">Lipiec</mat-option>
+    <mat-option value="august">Sierpień</mat-option>
+    <mat-option value="september">Wrzesień</mat-option>
+    <mat-option value="octoper">Październik</mat-option>
+    <mat-option value="november">Listopad</mat-option>
+    <mat-option value="december">Grudzień</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<p>3. Wybierz dzień miesiąca:</p>
+
+<mat-form-field appearance="fill">
+  <mat-label>Wybierz miesiąc</mat-label>
+  <mat-select>
+    <mat-option value="1">1</mat-option>
+    <mat-option value="2">2</mat-option>
+    <mat-option value="3">3</mat-option>
+    <mat-option value="4">4</mat-option>
+    <mat-option value="5">5</mat-option>
+    <mat-option value="6">6</mat-option>
+    <mat-option value="7">7</mat-option>
+    <mat-option value="8">8</mat-option>
+    <mat-option value="9">9</mat-option>
+    <mat-option value="10">10</mat-option>
+    <mat-option value="11">11</mat-option>
+    <mat-option value="12">12</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<p>4. Wybierz kategorię:</p>
+
+<mat-form-field appearance="fill">
+  <mat-label>Wybierz kategorię:</mat-label>
+<mat-select>
+  <mat-option value="Jedzenie">Jedzenie</mat-option>
+  <mat-option value="Transport">Transport</mat-option>
+</mat-select>
+</mat-form-field>
+
+<button mat-raised-button  title="Dodaj kategorię" routerLink="/category">Dodaj kategorię</button>
+
+<p>5. Wybierz podkategorię:</p>
+
+<mat-form-field appearance="fill">
+  <mat-label>Wybierz subkategorię:</mat-label>
+<mat-select>
+  <mat-option value="Na mieście">Jedzenie</mat-option>
+  <mat-option value="Paliwo">Transport</mat-option>
+</mat-select>
+</mat-form-field>
+<button mat-raised-button  title="Dodaj subkategorię" routerLink="/category">Dodaj subkategorię</button>
+
+<p>6. Podaj kwotę:</p>
+
+<form class="example-form">
+<mat-form-field class="example-full-width" appearance="fill">
+  <mat-label>Podaj kwotę</mat-label>
+  <textarea matInput placeholder="np. 350"></textarea>
+</mat-form-field>
+</form>
+<button mat-stroked-button color="primary">Dodaj wydatek</button>
+<p>Tutaj po prawej myśałem żeby zrobić dwie tabelki, jedna z wydatkami z każdego dnia, druga ogólna z całego miesiąca, a przy każdej z pozycji możliwość edycji i usuwania</p>
+</div>
+
+<div class="income-right" >
+  <app-data-table ></app-data-table>
+</div>

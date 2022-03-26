@@ -1,0 +1,57 @@
+<div class="income-left">
+  <div class="headline-intro">Przychody</div>
+
+
+<p>1. Wybierz czy chcesz analizować poprzedni miesiąc czy planować miesiąc przyszły: </p>
+
+<mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+  <mat-button-toggle value="bold">Analiza</mat-button-toggle>
+  <mat-button-toggle value="italic">Planowanie</mat-button-toggle>
+</mat-button-toggle-group>
+
+
+<p>2. Wybierz analizowany miesiąc:</p>
+
+<mat-form-field appearance="fill">
+  <mat-label>Wybierz miesiąc</mat-label>
+  <mat-select>
+    <mat-option value="january">Styczeń</mat-option>
+    <mat-option value="february">Luty</mat-option>
+    <mat-option value="march">Marzec</mat-option>
+    <mat-option value="april">Kwiecień</mat-option>
+    <mat-option value="may">Maj</mat-option>
+    <mat-option value="june">Czerwiec</mat-option>
+    <mat-option value="july">Lipiec</mat-option>
+    <mat-option value="august">Sierpień</mat-option>
+    <mat-option value="september">Wrzesień</mat-option>
+    <mat-option value="octoper">Październik</mat-option>
+    <mat-option value="november">Listopad</mat-option>
+    <mat-option value="december">Grudzień</mat-option>
+  </mat-select>
+</mat-form-field>
+<p>3. Wybierz źródło dochodu:</p>
+
+<mat-form-field appearance="fill">
+  <mat-label>Wybierz źródło dochodu:</mat-label>
+<mat-select>
+  <mat-option value="Praca">Praca</mat-option>
+  <mat-option value="Oprocentowanie">Oprocentowanie</mat-option>
+</mat-select>
+</mat-form-field>
+
+<button mat-raised-button  title="Add source of income" routerLink="/category">Dodaj źródło dochodu</button>
+<p>4. Podaj kwotę:</p>
+
+<form class="example-form">
+<mat-form-field class="example-full-width" appearance="fill">
+  <mat-label>Podaj kwotę</mat-label>
+  <textarea matInput placeholder="np. 350"></textarea>
+</mat-form-field>
+</form>
+<button mat-stroked-button color="primary">Dodaj dochód</button>
+
+</div>
+
+<div class="income-right" >
+  <app-data-table ></app-data-table>
+</div>
