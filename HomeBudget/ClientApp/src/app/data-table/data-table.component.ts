@@ -2,7 +2,9 @@ import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
-import { DataTableDataSource, DataTableItem } from './data-table-datasource';
+import { HomebudgetService } from '../shared/core/homebudget.service';
+import { Income } from '../shared/core/types/income.models';
+import { DataTableDataSource } from './data-table-datasource';
 
 @Component({
   selector: 'app-data-table',
@@ -12,14 +14,14 @@ import { DataTableDataSource, DataTableItem } from './data-table-datasource';
 export class DataTableComponent implements AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
-  @ViewChild(MatTable) table!: MatTable<DataTableItem>;
+  @ViewChild(MatTable) table!: MatTable<Income>;
   dataSource: DataTableDataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'name'];
+  displayedColumns = ['Id', 'Name', 'Value'];
 
-  constructor() {
-    this.dataSource = new DataTableDataSource();
+  constructor(private homeBudgetService: HomebudgetService) {
+    this.dataSource = new DataTableDataSource(homeBudgetService);
   }
 
   ngAfterViewInit(): void {

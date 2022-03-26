@@ -3,49 +3,25 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { map } from 'rxjs/operators';
 import { Observable, of as observableOf, merge } from 'rxjs';
+import { HomebudgetService } from '../shared/core/homebudget.service';
+import { Income } from '../shared/core/types/income.models';
 
-// TODO: Replace this with your own data model type
-export interface DataTableItem {
-  name: string;
-  id: number;
-}
-
-// TODO: replace this with real data from your application
-const EXAMPLE_DATA: DataTableItem[] = [
-  {id: 1, name: 'Przychody'},
-  {id: 2, name: 'Jedzenie'},
-  {id: 3, name: 'Mieszkanie/dom'},
-  {id: 4, name: 'Transport'},
-  {id: 5, name: 'Telekomunikacja'},
-  {id: 6, name: 'Opieka zdrowotna'},
-  {id: 7, name: 'Ubranie'},
-  {id: 8, name: 'Higiena'},
-  {id: 9, name: 'Dzieci'},
-  {id: 10, name: 'Rozrywka'},
-  {id: 11, name: 'Inne wydatki'},
-  {id: 12, name: 'Spłata długów'},
-  {id: 13, name: 'Aluminum'},
-  {id: 14, name: 'Silicon'},
-  {id: 15, name: 'Phosphorus'},
-  {id: 16, name: 'Sulfur'},
-  {id: 17, name: 'Chlorine'},
-  {id: 18, name: 'Argon'},
-  {id: 19, name: 'Potassium'},
-  {id: 20, name: 'Calcium'},
-];
 
 /**
  * Data source for the DataTable view. This class should
  * encapsulate all logic for fetching and manipulating the displayed data
  * (including sorting, pagination, and filtering).
  */
-export class DataTableDataSource extends DataSource<DataTableItem> {
-  data: DataTableItem[] = EXAMPLE_DATA;
+export class DataTableDataSource extends DataSource<Income> {
+  data: Income[] = [];
   paginator: MatPaginator | undefined;
   sort: MatSort | undefined;
 
-  constructor() {
+  constructor(private homeBudgetService: HomebudgetService) {
     super();
+
+    this.data = homeBudgetService.getIncome(); 
+    
   }
 
   /**
@@ -53,7 +29,7 @@ export class DataTableDataSource extends DataSource<DataTableItem> {
    * the returned stream emits new items.
    * @returns A stream of the items to be rendered.
    */
-  connect(): Observable<DataTableItem[]> {
+  connect(): Observable<Income[]> {
     if (this.paginator && this.sort) {
       // Combine everything that affects the rendered data into one update
       // stream for the data-table to consume.
@@ -76,7 +52,7 @@ export class DataTableDataSource extends DataSource<DataTableItem> {
    * Paginate the data (client-side). If you're using server-side pagination,
    * this would be replaced by requesting the appropriate data from the server.
    */
-  private getPagedData(data: DataTableItem[]): DataTableItem[] {
+  private getPagedData(data: Income[]): Income[] {
     if (this.paginator) {
       const startIndex = this.paginator.pageIndex * this.paginator.pageSize;
       return data.splice(startIndex, this.paginator.pageSize);
@@ -89,7 +65,7 @@ export class DataTableDataSource extends DataSource<DataTableItem> {
    * Sort the data (client-side). If you're using server-side sorting,
    * this would be replaced by requesting the appropriate data from the server.
    */
-  private getSortedData(data: DataTableItem[]): DataTableItem[] {
+  private getSortedData(data: Income[]): Income[] {
     if (!this.sort || !this.sort.active || this.sort.direction === '') {
       return data;
     }
@@ -97,8 +73,9 @@ export class DataTableDataSource extends DataSource<DataTableItem> {
     return data.sort((a, b) => {
       const isAsc = this.sort?.direction === 'asc';
       switch (this.sort?.active) {
-        case 'name': return compare(a.name, b.name, isAsc);
-        case 'id': return compare(+a.id, +b.id, isAsc);
+        case 'Name': return compare(a.Name, b.Name, isAsc);
+        case 'Id': return compare(+a.Id, +b.Id, isAsc);
+        case 'Value': return compare(+a.Value, +b.Value, isAsc);
         default: return 0;
       }
     });

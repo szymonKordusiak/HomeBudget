@@ -8,5 +8,7 @@ export class AppComponent {
   title = 'app';
   myimage:string="assets/images/favicon-24x24.png";
   myfavicon:string="assets/images/favicon.ico";
+
+  
 }
 
