@@ -361,3 +361,8 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+HomeBudget/ClientApp/.angular
+*.pack
+HomeBudget/ClientApp/.angular/cache/angular-webpack/304c020e058a8de760020ef3b04a653e104c9cef/0.pack
+HomeBudget/ClientApp/.angular/cache/angular-webpack/304c020e058a8de760020ef3b04a653e104c9cef/index.pack

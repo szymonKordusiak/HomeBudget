@@ -1,6 +1,34 @@
+<head>
+  <style></style>
+</head>
+
 <body>
-  <app-nav-menu></app-nav-menu>
-  <div class="container">
-    <router-outlet></router-outlet>
+
+  <mat-toolbar color="primary" class="sticky-toolbar" >
+    <button mat-icon-button (click)="snav.toggle()">
+      <mat-icon >menu</mat-icon>
+    </button>
+    <button mat-button class="main-button" routerLink="/"><img [src]=myimage > Budżet finansowy </button>
+    <div class="login-items">
+    <div style="float: left; "><button mat-raised-button class="log-in" routerLink="/login" title="Log in" >Zaloguj</button></div>
+    <div style="float: left; margin: 0 10px;"><button mat-raised-button class="sign-up" title="Register" routerLink="/register">Zarejestruj</button></div>
   </div>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="content-container">
+    <mat-sidenav #snav (click)="snav.toggle()">
+      <mat-nav-list>
+        <div class="menu-items">
+          <button mat-raised-button class="side-button" routerLink="/overview" title="Overview"><mat-icon>trending_up</mat-icon> Analiza  </button>
+          <button mat-raised-button class="side-button" routerLink="/income" title="Income"> <mat-icon>attach_money</mat-icon> Przychody </button>
+          <button mat-raised-button class="side-button" routerLink="/expenses" title="Expenses"><mat-icon>paid</mat-icon> Wydatki </button>
+          <button mat-raised-button class="side-button" routerLink="/category" title="category"><mat-icon>person</mat-icon> Kategorie </button>
+        </div>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
 </body>

@@ -1,0 +1,288 @@
+@use '@angular/material' as mat;
+
+//@use './colors.scss';
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+/* You can add global styles to this file, and also import other style files */
+
+/* Provide sufficient contrast against white background */
+
+
+.mat-toolbar.mat-primary {
+  background: #0078FF;
+  color: #fff;
+  height: 70px;
+
+
+}
+
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.content-container{
+  height: 93.6%;
+  background-color: #fff;
+}
+
+.menu-items{
+  display: flex;
+  flex-direction: column;
+  min-width: 250px;
+  align-items: flex-start;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  align-content: space-around;
+
+
+
+  .mat-raised-button {
+    min-width: 200px;
+    min-height: 70px;
+    margin-top: 25px;
+    margin-left: 40px;
+    margin-right: 40px;
+    font-size: 20px;
+
+
+  }
+
+}
+
+.mat-stroked-button{
+  margin-left: 330px;
+}
+
+
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+
+.side-button{
+  background: #0078FF;
+  color: #fff;
+}
+
+.main-button{
+  min-height: 50px;
+  padding: 15px;
+  font-size: 24px;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+.login-items{
+
+  position:fixed;
+  right: 50px;
+
+}
+
+.log-in{
+  color:#0078FF;
+  margin:10px;
+}
+
+.log-in:hover{
+  background-color: #c6d8ec;
+}
+
+.sign-up{
+  background-color: #0078FF;
+  color: white;
+}
+
+.sign-up:hover{
+  background-color: #166fe5;
+}
+
+
+.user-image{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 15px;
+
+}
+
+.menu-icon{
+  height: 30px;
+}
+
+.login-div mat-card{
+padding: 0px;
+}
+
+.login-form{
+  padding: 20px;
+}
+
+
+.div-intro{
+  width: 500px;
+  text-align: justify;
+  margin:auto;
+
+
+}
+
+.headline-intro{
+  padding:10px;
+  font-weight: bold;
+  font-size: 45px;
+  margin: 80px 0px 40px 0;
+  color:#103866;
+
+}
+
+.text-intro{
+  display: block;
+  color: #000;
+  border-left: #0078FF 10px solid;
+  padding: 0 15px 0 15px;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 23px;
+  line-height: 1.4375rem;
+  margin-bottom: 0;
+
+}
+.text-intro2{
+  color: #000;
+  padding: 0 15px 0 25px;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 23px;
+  line-height: 1.4375rem;
+
+}
+
+.headline-intro2{
+  font-size: 40px;
+  padding:10px;
+  font-weight: bold;
+  margin: 30px 0px 40px 0;
+  color:#103866;
+
+}
+.text-intro2{
+  display: block;
+  color: #000;
+  padding: 0 15px;
+
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 23px;
+  line-height: 1.4375rem;
+
+}
+
+.sign-up-button-intro{
+  background-color: #0078FF;
+  color: white;
+  font-size: 25px;
+  padding: 20px;
+  width: 250px;
+  height: 70px;
+}
+
+.sign-up-button-intro:hover{
+  background-color: #166fe5;
+}
+
+.intro-button-center{
+  display: flex;
+  margin: 40px 0 0 0 ;
+}
+
+
+.income-left{
+  position:fixed;
+  padding-left: 70px;
+}
+
+.income-right{
+    text-align: center;
+    margin-left: 40%;
+    margin-top: 70px;
+  padding-left: 20px;
+
+}
+
+.login-button-in-register {
+  background-color: #42b12b;
+  color: #fff;
+  font-size: 20px;
+  width: 50%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  left: 25%;
+  right: 25%;
+  border: #000 ;
+
+}
+
+.log-in-center{
+  align-items: center;
+  border-top: 1px solid #dadde1;
+  padding-top: 15px;
+  margin-top: 5px;
+
+}
+
+.register-button-in-login{
+  background-color: #42b12b;
+  color: #fff;
+  font-size: 20px;
+  width: 50%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  left: 25%;
+  right: 25%;
+
+}
+
+.register-button-in-login:hover  {
+  background-color: #36a420;
+}
+
+.login-button-in-register:hover{
+  background-color: #36a420;
+}
+
+.login-button-in-login {
+  background-color: #0078FF;
+  color: #fff;
+  font-size: 24px;
+  height: 50px;
+}
+
+.login-button-in-login:hover{
+background-color: #166fe5;
+}
+
+.register-button-in-register{
+  background-color: #0078FF;
+  color: #fff;
+  font-size: 24px;
+  height: 50px;
+  margin-top: 100px;
+}
+
+.register-button-in-register:hover{
+  background-color: #166fe5;
+  }

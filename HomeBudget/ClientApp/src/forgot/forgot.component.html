@@ -1,0 +1,21 @@
+
+
+<div fxLayoutAlign="center center" fxFlexFill class="login-div">
+  <mat-card fxFlex="25">
+    <mat-toolbar color="primary" fxLayout="column" style="font-size: 27px; padding-top: 5px; border-radius: 12px 12px 0 0;">Zapomniałeś hasła?<br>
+      <p style="font-size: 15px; font-size: 17px; " >Wyślemy Ci na email link do odzyskiwania hasła.</p></mat-toolbar>
+
+    <form fxLayoutAlign="stretch" fxLayout="column" class="login-form">
+      <mat-form-field >
+        <input matInput placeholder="Email" >
+      </mat-form-field>
+
+      <button mat-raised-button class="register-button-in-register" type="submit">Zresetuj hasło</button>
+      <br>
+      <button mat-button class="register-button-in-login" type="submit" routerLink="/login">Zaloguj się</button>
+      <div style="margin-top: 15px;"><button mat-button class="register-button-in-login" type="submit" routerLink="/register">Zarejestruj się</button></div>
+    </form>
+
+  </mat-card>
+</div>
+
