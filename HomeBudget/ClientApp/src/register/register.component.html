@@ -1,27 +1,43 @@
-
-
 <div fxLayoutAlign="center center" fxFlexFill class="login-div">
-  <mat-card fxFlex="25">
-    <mat-toolbar color="primary" style="font-size: 30px; border-radius: 12px 12px 0 0;">Zarejestruj się!</mat-toolbar>
-    <form fxLayoutAlign="stretch" fxLayout="column" class="login-form">
-      <mat-form-field >
-        <input matInput placeholder="Twoje imię" >
-      </mat-form-field>
-      <mat-form-field >
-        <input matInput placeholder="Email" >
-      </mat-form-field>
+    <mat-card fxFlex="25">
+        <mat-toolbar
+            color="primary"
+            style="font-size: 30px; border-radius: 12px 12px 0 0"
+            >Zarejestruj się!</mat-toolbar
+        >
+        <form fxLayoutAlign="stretch" fxLayout="column" class="login-form">
+            <mat-form-field>
+                <input matInput placeholder="Twoje imię" />
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Email" />
+            </mat-form-field>
 
-      <mat-form-field >
-        <input matInput type="password" placeholder="Hasło" >
-      </mat-form-field>
-      <mat-form-field >
-        <input matInput type="password" placeholder="Powtórz hasło" >
-      </mat-form-field>
+            <mat-form-field>
+                <input matInput type="password" placeholder="Hasło" />
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput type="password" placeholder="Powtórz hasło" />
+            </mat-form-field>
 
-      <button mat-raised-button class="register-button-in-register" type="submit">Zarejestruj</button>
-      <br>
-      <div class="log-in-center"><button mat-button class="login-button-in-register" type="submit" routerLink="/login">Zaloguj</button></div>
-    </form>
-
-  </mat-card>
+            <button
+                mat-raised-button
+                class="register-button-in-register"
+                type="submit"
+            >
+                Zarejestruj
+            </button>
+            <br />
+            <div class="log-in-center">
+                <button
+                    mat-button
+                    class="login-button-in-register"
+                    type="submit"
+                    routerLink="/login"
+                >
+                    Zaloguj
+                </button>
+            </div>
+        </form>
+    </mat-card>
 </div>
