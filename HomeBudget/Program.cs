@@ -1,6 +1,12 @@
+using HomeBudget.Repositories.Repositories;
+using HomeBudget.Services.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddScoped<IIncomeService, IncomeService>();
+
+builder.Services.AddScoped<IIncomeRepository, IncomeRepository>();
 
 builder.Services.AddControllersWithViews();
 
